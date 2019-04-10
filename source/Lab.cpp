@@ -246,7 +246,7 @@ int main(int argc, char** argv)
 	// ************* Object vertex coordinate initialization ***********************
 
 	// Set the initial viewing tranformation for the scene
-	PerVertex::viewingTransformation = glm::translate(dvec3(0.0, 0.0, -10.0));
+	PerVertex::viewingTransformation = glm::translate(dvec3(0.0, 0.0, -12.0));
 
 	// Enter the GLUT main loop. Control will not return until the window is closed.
 	glutMainLoop();
