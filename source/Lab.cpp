@@ -19,7 +19,7 @@ Pyramid redPyramid(color(1.0, 0.0, 0.0, 0.5f), 1.0, 1.0 );
 Pyramid greenPyramid(color(0.0, 1.0, 0.0, 0.5f), 1.0, 1.0);
 Pyramid magentaPyramid(color(1.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
 Pyramid bluePyramid(color(0.0, 0.0, 1.0, 0.5f), 1.0, 1.0);
-
+Pyramid whitePyramid(color(1.0, 1.0, 1.0, 0.5f), 1.0, 1.0);
 
 // Reference plane
 ReferencePlane referencePlane;
@@ -62,6 +62,10 @@ void renderObjects()
 
     PerVertex::modelingTransformation = glm::translate(dvec3(3.5, -2.5, -3.5));
     PerVertex::processTriangleVertices(bluePyramid.triangleVertices);
+
+    // white orbiting pyramid
+    PerVertex::modelingTransformation = glm::rotate(-angle, dvec3(0.0, 1.0, 0.0)) * glm::translate(dvec3(10.0, 3.0, 0.0)) * glm::rotate(angle, dvec3(1.0, 0.0, 0.0));
+    PerVertex::processTriangleVertices(whitePyramid.triangleVertices);
 
 } // end renderObjects
 
